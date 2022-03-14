@@ -2,14 +2,11 @@ import "./components/App.css";
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import TodoRows from "./components/TodoRows";
-import Timer from "./Timer";
-import Setting from "./components/Setting";
-import SettingContext from "./components/SettingContext";
+import Pomodoro from "./Pomodoro";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.stateHandler = this.stateHandler.bind(this);
     this.state = {
       userName: "Di Zhang",
       setting: false,
@@ -61,15 +58,9 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <Navbar name={this.state.userName} />
+
           <div class="d-flex justify-content-center">
-            <SettingContext.Provider
-              value={{
-                studyTime: this.state.studyTime,
-                breakTime: this.state.breakTime,
-              }}
-            >
-              {this.state.setting ? <Setting /> : <Timer />}
-            </SettingContext.Provider>
+            <Pomodoro />
           </div>
           <div className="col-12">
             <table className="table">
