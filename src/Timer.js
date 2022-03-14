@@ -4,6 +4,7 @@ import "react-circular-progressbar/dist/styles.css";
 import PlayBtn from "./components/PlayBtn";
 import PauseBtn from "./components/PauseBtn";
 import SettingBtn from "./components/SettingBtn";
+
 export default class Timer extends Component {
   render = () => {
     return (

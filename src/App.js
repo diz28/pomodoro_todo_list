@@ -9,10 +9,10 @@ import SettingContext from "./components/SettingContext";
 class App extends Component {
   constructor(props) {
     super(props);
-
+    this.stateHandler = this.stateHandler.bind(this);
     this.state = {
       userName: "Di Zhang",
-      setting: true,
+      setting: false,
       studyTime: 45,
       breakTime: 15,
       todoItems: [
@@ -48,6 +48,13 @@ class App extends Component {
         item.action === todo.action ? { ...item, done: !item.done } : item
       ),
     });
+
+  stateHandler = () => {
+    this.setState({
+      studyTime: 45,
+      breakTime: 15,
+    });
+  };
 
   render() {
     return (
