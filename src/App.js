@@ -9,9 +9,6 @@ class App extends Component {
     super(props);
     this.state = {
       userName: "Di Zhang",
-      setting: false,
-      studyTime: 45,
-      breakTime: 15,
       todoItems: [
         { action: "Do project 1", done: false },
         { action: "Run for 30 min", done: false },
@@ -20,6 +17,10 @@ class App extends Component {
       newTodo: "",
     };
   }
+
+  setData = () => {
+    localStorage.setItem("myData", JSON.stringify(this.state.todoItems));
+  };
 
   updateValue = (event) => {
     this.setState({ newTodo: event.target.value });
@@ -79,6 +80,7 @@ class App extends Component {
               value={this.state.newTodo}
               onChange={this.updateValue}
             />
+
             <button className="btn btn-primary" onClick={this.newTodo}>
               New Task
             </button>
