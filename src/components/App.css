@@ -1,19 +1,6 @@
-:root {
-  --red: #f54e4e;
-  --green: #4aec8c;
-}
-
-body {
-  background-color: rgb(89, 67, 67);
-  color: #eee;
-}
-main {
-  padding-top: 50px;
-  max-width: 340px;
-  margin: 0 auto;
-  text-align: center;
-}
-
+/**
+ * setting up button
+ */
 button {
   background-color: transparent;
   color: #f54e4e;
@@ -21,11 +8,4 @@ button {
   display: inline-block;
   width: 100px;
   cursor: pointer;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  text-transform: capitalize;
 }

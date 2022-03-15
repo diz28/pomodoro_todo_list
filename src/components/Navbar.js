@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+/**
+ * display the bar on the top of the screen
+ */
 class Navbar extends Component {
   render = () => {
     return (

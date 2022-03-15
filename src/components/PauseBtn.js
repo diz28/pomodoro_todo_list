@@ -1,3 +1,6 @@
+/**
+ * athestics of pause button
+ */
 function PauseBtn(props) {
   return (
     <button {...props}>

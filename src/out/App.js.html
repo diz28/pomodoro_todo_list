@@ -1,4 +1,32 @@
-import "./components/App.css";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: App.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: App.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import "./components/App.css";
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import Pomodoro from "./Pomodoro";
@@ -18,12 +46,19 @@ class App extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-
     this.state = {
       userName: "Di Zhang",
       todoItems: [
-        { id: nanoid(), action: "finish project", done: false },
-        { id: nanoid(), action: "walk dog", done: false },
+        {
+          action: "finish project",
+          done: false,
+          id: nanoid(),
+        },
+        {
+          action: "walk dog",
+          done: false,
+          id: nanoid(),
+        },
       ],
       newTodo: "",
     };
@@ -46,22 +81,17 @@ class App extends Component {
    */
   todoRows = () =>
     this.state.todoItems.map((item) => (
-      <tr key={item.action}>
-        <td>{item.action}</td>
-        <td>
-          <input
+      &lt;tr key={item.action}>
+        &lt;td>{item.action}&lt;/td>
+        &lt;td>
+          &lt;input
             type="checkbox"
             defaultChecked={item.done}
             onChang={() => this.toggleDone(item)}
           />
-
-          <TrashBtn
-            type="submit"
-            onClick={() => this.deleteTodo(item)}
-            onChange={this.handleChange}
-          />
-        </td>
-      </tr>
+          &lt;TrashBtn onClick={() => this.deleteTodo(item)} />
+        &lt;/td>
+      &lt;/tr>
     ));
 
   deleteTodo = (todo) =>
@@ -113,7 +143,7 @@ class App extends Component {
    * update the user input(todos) to the state
    */
   handleChange = (event) => {
-    this.setState({ newTodo: event.target.value, id: event.target.id });
+    this.setState({ newTodo: event.target.value });
   };
 
   /**
@@ -121,44 +151,67 @@ class App extends Component {
    */
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <Navbar name={this.state.userName} />
-          <div class="d-flex justify-content-center">
-            <Pomodoro />
-          </div>
-          <form onSubmit={this.handleFormSubmit}>
-            <div className="col-12">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Task</th>
-                    <th>Complete</th>
-                  </tr>
-                </thead>
-                <tbody>{this.todoRows()}</tbody>
-              </table>
-            </div>
+      &lt;div className="container">
+        &lt;div className="row">
+          &lt;Navbar name={this.state.userName} />
+          &lt;div class="d-flex justify-content-center">
+            &lt;Pomodoro />
+          &lt;/div>
+          &lt;form onSubmit={this.handleFormSubmit}>
+            &lt;div className="col-12">
+              &lt;table className="table">
+                &lt;thead>
+                  &lt;tr>
+                    &lt;th>Task&lt;/th>
+                    &lt;th>Complete&lt;/th>
+                  &lt;/tr>
+                &lt;/thead>
+                &lt;tbody>{this.todoRows()}&lt;/tbody>
+              &lt;/table>
+            &lt;/div>
 
-            <div className="col-12">
-              <input
+            &lt;div className="col-12">
+              &lt;input
                 className="form-control"
                 value={this.state.newTodo}
                 onChange={this.handleChange}
               />
-              <button
+              &lt;button
                 type="submit"
                 className="btn btn-primary"
                 onClick={this.newTodo}
               >
                 New Task
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+              &lt;/button>
+            &lt;/div>
+          &lt;/form>
+        &lt;/div>
+      &lt;/div>
     );
   }
 }
 
 export default App;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Input">Input</a></li><li><a href="global.html#Pomodoro">Pomodoro</a></li><li><a href="global.html#Timer">Timer</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Mar 15 2022 07:52:28 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

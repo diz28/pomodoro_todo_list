@@ -1,11 +1,26 @@
 # CS5520 Project1 Podomoro Todo List
 
+This app is meant to help people to keep track of their tasks and boost their productivity.
+
 ## Usage
 
 ```
 yarn install
 yarn start
 ```
+
+## Business Requirement
+
+The business requirement is included in the repo as a PDF.
+
+## JSDoc
+
+there are two out folder in the repo.
+one of them is in /src
+and the other one is in /src/components
+this is the html for App.js:
+http://127.0.0.1:5500/src/out/App.html
+http://127.0.0.1:5500/src/out/App.js.html
 
 ## How to use
 

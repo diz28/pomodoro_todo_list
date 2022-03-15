@@ -1,3 +1,6 @@
+/**
+ * athestics of play button
+ */
 function PlyBtn(props) {
   return (
     <button {...props}>
