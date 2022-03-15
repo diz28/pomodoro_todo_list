@@ -1,4 +1,33 @@
-# Getting Started with Create React App
+# CS5520 Project1 Podomoro Todo List
+
+## Usage
+
+'''
+yarn install
+yarn start
+'''
+
+## How to use
+
+This is mere a basic implementation of what I have in mind.
+After you open the web, there are box on the top.
+On the left, you can enter number for work time, and on the right you can enter number for break time.
+The minumum time you can enter is 1 minute.
+It should starts with work time and when it finishes, it will automatically go to break time. It will keep going until you stop it.
+
+On the bottom is a todo list.
+you enter your task in the text box and hit NEW TASK, the task will be displayed in the list above.
+You can click the box on the right to mark it as completed.
+
+## Class Diagram Link (Image is included in the git repo, if you want see the diagram in more detail please click the link below)
+
+https://lucid.app/lucidchart/1ba7a316-ee15-4539-a71f-b5f8cfd055ed/edit?invitationId=inv_8e4b1a10-b15e-4f30-ba78-0991120ed2ce
+
+## Interface Mockup Link (There are about 8 pages of interface mockups, please see the left side of the webpage to check out more interface mockups)
+
+https://www.figma.com/file/U7U0gDl9pTxGGVN9DfAgj3/Untitled?node-id=7%3A4
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

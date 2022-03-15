@@ -15,18 +15,21 @@ class App extends Component {
         { action: "water plante", done: false },
       ],
       newTodo: "",
+      user: "",
+      rememberMe: false,
     };
   }
 
-  setData = () => {
-    localStorage.setItem("myData", JSON.stringify(this.state.todoItems));
-  };
+  // setData = () => {
+  //   localStorage.setItem("myData", JSON.stringify(this.state.todoItems));
+  // };
 
   updateValue = (event) => {
     this.setState({ newTodo: event.target.value });
   };
 
   newTodo = () => {
+    localStorage.setItem("item", JSON.stringify(this.state.todoItems));
     this.setState({
       todoItems: [
         ...this.state.todoItems,
@@ -34,6 +37,24 @@ class App extends Component {
       ],
     });
   };
+
+  //       <input
+  //         name="rememberMe"
+  //         checked={this.state.rememberMe}
+  //         onChange={this.handleChange}
+  //         type="checkbox"
+  //       />
+
+  //   <tr>
+  //   <td>{this.props.item.action}</td>
+  //   <td>
+  //     <input
+  //       type="checkbox"
+  //       defaultChecked={this.props.item.done}
+  //       onChang={() => this.callback(this.props.item)}
+  //     />
+  //   </td>
+  // </tr>
 
   todoRows = () =>
     this.state.todoItems.map((item) => (
@@ -47,6 +68,10 @@ class App extends Component {
       ),
     });
 
+  // componentWillUnmount(nextProps, nextState) {
+  //   localStorage.setItem("item", JSON.stringify(this.state.todoItems));
+  // }
+
   stateHandler = () => {
     this.setState({
       studyTime: 45,
@@ -54,8 +79,48 @@ class App extends Component {
     });
   };
 
+  handleChange = (event) => {
+    const input = event.target;
+    const value = input.type === "checkbox" ? input.checked : input.value;
+
+    this.setState({ [input.newTodo]: value });
+  };
+
+  handleFormSubmit = () => {
+    const { newTodo, done } = this.state;
+    localStorage.setItem("done", done);
+    localStorage.setItem("newTodo", done ? newTodo : "");
+  };
+
+  componentDidMount() {
+    const item = localStorage.getItem("item");
+    console.log(item);
+    //this.setState({ todoItems: JSON.stringify(item) });
+  }
+
   render() {
     return (
+      //
+      //     <label>
+      //       User:{" "}
+      //       <input
+      //         name="user"
+      //         value={this.state.user}
+      //         onChange={this.handleChange}
+      //       />
+      //     </label>
+      //     <label>
+      //       <input
+      //         name="rememberMe"
+      //         checked={this.state.rememberMe}
+      //         onChange={this.handleChange}
+      //         type="checkbox"
+      //       />
+      //       Remember me
+      //     </label>
+      //     <button type="submit">Sign In</button>
+      //
+      // );
       <div className="container">
         <div className="row">
           <Navbar name={this.state.userName} />

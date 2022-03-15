@@ -15,3 +15,9 @@ class TodoRows extends Component {
   );
 }
 export default TodoRows;
+//       <input
+//         name="rememberMe"
+//         checked={this.state.rememberMe}
+//         onChange={this.handleChange}
+//         type="checkbox"
+//       />
