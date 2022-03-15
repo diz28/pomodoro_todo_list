@@ -2,10 +2,10 @@
 
 ## Usage
 
-'''
+,,,
 yarn install
 yarn start
-'''
+,,,
 
 ## How to use
 
