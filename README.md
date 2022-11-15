@@ -1,4 +1,4 @@
-# CS5520 Project1 Podomoro Todo List
+# CS5510 Project1 Podomoro Todo List
 
 This app is meant to help people to keep track of their tasks and boost their productivity.
 
